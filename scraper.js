@@ -2,7 +2,7 @@ import puppeteer from "puppeteer";
 import fs from "fs";
 import path from "path";
 
-const carMappings = {
+const carMap = {
 	"audi r8 lms gt3 evo ii": 31, "amr v8 vantage": 20, "bmw m4 gt3": 30,
 	"ferrari 296 gt3": 32, "honda nsx gt3 evo": 21, "lamborghini huracan gt3 evo 2": 33,
 	"mclaren 720s gt3 evo": 35, "mercedes amg gt3": 25, "porsche 992 gt3 r": 34,
@@ -29,9 +29,9 @@ const trackMap = {
 
 function findCarId(name) {
 	const n = name.toLowerCase().replace(/[^\w\s]/g, "").replace(/\s+/g, " ").trim();
-	if (carMappings[n]) return carMappings[n];
+	if (carMap[n]) return carMap[n];
 
-	for (const [k, v] of Object.entries(carMappings)) {
+	for (const [k, v] of Object.entries(carMap)) {
 		const kWords = k.split(" "), nWords = n.split(" ");
 		const matches = kWords.filter(kw => nWords.some(nw => nw.includes(kw) || kw.includes(nw))).length;
 		if (matches >= Math.min(3, kWords.length - 1)) return v;
