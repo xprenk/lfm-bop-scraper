@@ -27,7 +27,7 @@ npm install
 ## 🎯 Usage
 
 ```bash
-node scraper.js
+npm start
 ```
 
 The scraper will automatically:
