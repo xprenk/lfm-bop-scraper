@@ -2,7 +2,7 @@
 
 # 🏎️ LFM BoP Scraper
 
-**A Node.js web scraper for Low Fuel Motorsport Balance of Performance data**
+**A Node.js web scraper for LFM's Balance of Performance using Puppeteer**
 
 [![Node.js](https://img.shields.io/badge/Node.js-v14%2B-green.svg)](https://nodejs.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -13,18 +13,16 @@
 
 ## 🚀 Features
 
-- **Automated data extraction** from LFM BoP pages
+- **Automated data extraction** from LFM BoP pages using Puppeteer
 - **GT3 and GT4 support** with comprehensive car mappings
 - **JSON output** for easy integration
 - **Track mapping** to ACC identifiers
 
-## 📦 Installation
+## 📦 Installation & Usage
 
 ```bash
 npm install
 ```
-
-## 🎯 Usage
 
 ```bash
 npm start
@@ -64,8 +62,7 @@ The scraper includes comprehensive mappings for:
 
 See the source code for complete mapping tables.
 
----
+## Credits
 
-<div align="center">
-<sub>Built for the ACC community</sub>
-</div>
+- [Low Fuel Motorsport](https://lowfuelmotorsport.com) for public BoP data
+- [Puppeteer](https://github.com/puppeteer/puppeteer) for headless browser automation
