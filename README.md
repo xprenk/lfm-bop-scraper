@@ -1,4 +1,3 @@
-````markdown
 <div align="center">
 
 # 🏎️ LFM BoP Scraper
@@ -32,6 +31,7 @@ node scraper.js
 ```
 
 The scraper will automatically:
+
 1. Navigate to the LFM BoP page
 2. Extract GT3 and GT4 data
 3. Generate `dist/bop.json` with the results
@@ -58,6 +58,7 @@ The scraper will automatically:
 ## 🗂️ Data Mapping
 
 The scraper includes comprehensive mappings for:
+
 - **Car names** → ACC model IDs
 - **Track names** → ACC identifiers
 
@@ -68,4 +69,3 @@ See the source code for complete mapping tables.
 <div align="center">
 <sub>Built for the ACC community</sub>
 </div>
-````
