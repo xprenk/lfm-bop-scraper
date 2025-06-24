@@ -37,7 +37,6 @@ function findCarId(name) {
 		if (matches >= Math.min(3, kWords.length - 1)) return v;
 	}
 	console.log(`Car not found: "${name}"`);
-	return -1;
 }
 
 function parseHTML(html, filter = null) {
@@ -65,7 +64,7 @@ function parseHTML(html, filter = null) {
 			if (filter && !cls.toLowerCase().includes(filter.toLowerCase())) continue;
 
 			const carId = findCarId(car), ballastMatch = ballast.match(/([-+]?\d+)\s*kg/i);
-			if (carId !== -1 && ballastMatch) {
+			if (carId && ballastMatch) {
 				const b = parseInt(ballastMatch[1]);
 				if (!isNaN(b) && b >= -50 && b <= 50) {
 					entries.push({ track: trackId, carModel: carId, ballastKg: b });
@@ -87,7 +86,6 @@ async function scrapeTab(page, tab = null) {
 				}
 			}
 		}, tab);
-		await new Promise(r => setTimeout(r, 5000));
 	}
 	return await page.evaluate(() => document.body.innerHTML);
 }
@@ -111,9 +109,11 @@ async function scrapeBoPData() {
 			waitUntil: "networkidle0", timeout: 30000,
 		});
 
-		await new Promise(r => setTimeout(r, 10000));
+		console.log("🌐 Page loaded, waiting for content...");
+		await new Promise(r => setTimeout(r, 5000));
 
-		const gt3Html = await scrapeTab(page), gt4Html = await scrapeTab(page, "GT4");
+		console.log("🔍 Scraping GT3 and GT4 tabs...");
+		const [gt3Html, gt4Html] = await Promise.all([scrapeTab(page), scrapeTab(page, "GT4")]);
 		const gt3 = parseHTML(gt3Html), gt4 = parseHTML(gt4Html, "gt4");
 		const all = [...gt3, ...gt4];
 
