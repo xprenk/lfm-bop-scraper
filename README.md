@@ -18,11 +18,13 @@
 - **JSON output** for easy integration
 - **Track mapping** to ACC identifiers
 
-## 📦 Installation & Usage
+## 📦 Installation
 
 ```bash
 npm install
 ```
+
+## 🏁 Usage
 
 ```bash
 npm start
