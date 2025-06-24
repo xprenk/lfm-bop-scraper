@@ -64,7 +64,7 @@ The scraper includes comprehensive mappings for:
 
 See the source code for complete mapping tables.
 
-## Credits
+## 🙏 Credits
 
 - [Low Fuel Motorsport](https://lowfuelmotorsport.com) for public BoP data
 - [Puppeteer](https://github.com/puppeteer/puppeteer) for headless browser automation
