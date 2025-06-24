@@ -1,0 +1,13 @@
+{
+  "name": "lfm-scraper",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "scrape": "node scraper.js",
+    "build:bop": "node scraper.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.10.2"
+  }
+}
